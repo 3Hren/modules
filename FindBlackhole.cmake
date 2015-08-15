@@ -14,7 +14,7 @@ find_path(BLACKHOLE_INCLUDE_DIR
 
 set(BLACKHOLE_INCLUDE_DIRS ${BLACKHOLE_INCLUDE_DIR})
 
-# Handle the QUIETLY and REQUIRED arguments and set LIBCOCAINE_FOUND to TRUE if all listed variables
+# Handle the QUIETLY and REQUIRED arguments and set LIBBLACKHOLE_FOUND to TRUE if all listed variables
 # are TRUE.
 include(FindPackageHandleStandardArgs)
 find_package_handle_standard_args(
