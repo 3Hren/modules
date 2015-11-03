@@ -27,3 +27,17 @@ FUNCTION(DOWNLOAD_GOOGLE_TESTING)
     SET(GTEST_BINARY_DIR ${BINARY_DIR}/gtest PARENT_SCOPE)
     SET(GMOCK_BINARY_DIR ${BINARY_DIR} PARENT_SCOPE)
 ENDFUNCTION()
+
+function(prepare_google_testing)
+    download_google_testing()
+
+    include_directories(SYSTEM PARENT_SCOPE
+        ${GTEST_INCLUDE_DIR}
+        ${GMOCK_INCLUDE_DIR}
+    )
+    link_directories(${GTEST_BINARY_DIR} ${GMOCK_BINARY_DIR})
+endfunction()
+
+function(enable_google_testing __TARGET__)
+    add_dependencies(${__TARGET__} googlemock)
+endfunction (enable_google_testing)
